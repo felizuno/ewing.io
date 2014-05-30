@@ -4,10 +4,11 @@
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="/javascripts/libs/jquery-min.1.11.1.js"></script>
+    <script src="/javascripts/main.js"></script>
   </head>
 
   <body>
-    <div id="mobile-sidebar" class="shown">
+    <div id="mobile-sidebar">
       <div class="nav verticle"></div>      
     </div>
 
@@ -17,25 +18,13 @@
     
       <div id="mobile-over" class="shown">
         <div id="mobile-header" class="shown">
+          <div class="nav-toggle"></div>
           <h1>{{ title }}</h1>
         </div>
-        <div id="mobile-footer" class="shown full-view">
-          <div class="full-view"></div>
+        <div id="mobile-footer" class="">
         </div>
       </div>
 
     </div>
-    <script>
-    $('#mobile-footer').click(function() {
-      var shown = $(this).hasClass('shown'),
-          top = (shown) ? '0' : '90%';
-
-      $(this)
-        .animate({ 'top': top })
-        .toggleClass('shown', !shown);
-
-      console.log('click');
-    })
-    </script>
   </body>
 </html>

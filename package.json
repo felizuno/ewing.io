@@ -15,9 +15,13 @@
     "Ewing"
   ],
   "author": "Kevin Ewing",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/felizuno/ewing.io/issues"
   },
-  "homepage": "https://github.com/felizuno/ewing.io"
+  "homepage": "https://github.com/felizuno/ewing.io",
+  "dependencies": {
+    "express": "3.5.0",
+    "hjs": "*",
+    "less-middleware": "*"
+  }
 }

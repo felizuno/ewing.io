@@ -1,0 +1,23 @@
+{
+  "name": "ewingio",
+  "version": "0.0.0",
+  "description": "My personal website",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/felizuno/ewing.io.git"
+  },
+  "keywords": [
+    "Kevin",
+    "Ewing"
+  ],
+  "author": "Kevin Ewing",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felizuno/ewing.io/issues"
+  },
+  "homepage": "https://github.com/felizuno/ewing.io"
+}

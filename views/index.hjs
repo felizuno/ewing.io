@@ -3,9 +3,39 @@
   <head>
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/libs/jquery-min.1.11.1.js"></script>
   </head>
+
   <body>
-    <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
+    <div id="mobile-sidebar" class="shown">
+      <div class="nav verticle"></div>      
+    </div>
+
+    <div id="mobile-main-content" class="shown full-view">
+      <div id="mobile-under" class="shown full-view">
+      </div>
+    
+      <div id="mobile-over" class="shown">
+        <div id="mobile-header" class="shown">
+          <h1>{{ title }}</h1>
+        </div>
+        <div id="mobile-footer" class="shown full-view">
+          <div class="full-view"></div>
+        </div>
+      </div>
+
+    </div>
+    <script>
+    $('#mobile-footer').click(function() {
+      var shown = $(this).hasClass('shown'),
+          top = (shown) ? '0' : '90%';
+
+      $(this)
+        .animate({ 'top': top })
+        .toggleClass('shown', !shown);
+
+      console.log('click');
+    })
+    </script>
   </body>
 </html>

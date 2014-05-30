@@ -1,8 +1,58 @@
-body {
-  padding: 50px;
+html {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+body {
+  overflow: hidden;
+}
+
+.shown {
+  display: block;
+}
+
+.full-view {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#mobile-sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -30%;
+  width: 30%;
+  height: 100%;
+  background-color: blue;
+}
+
+#mobile-main-content {
+  height: 90%;
+}
+
+#mobile-over {
+  z-index: 10;
+}
+
+#mobile-under {
+  padding: 10% 15%;
+  background-color: green;
+}
+
+#mobile-header {
+  position: fixed;
+  top: 0;
+  height: 10%;
+  width: 100%;
+  background-color: red;
+}
+
+#mobile-footer {
+  position: fixed;
+  top: 90%;
+  background-color: red;
 }

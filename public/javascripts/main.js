@@ -6,8 +6,11 @@ var APP = window.APP || {};
     init: function() {
       this.bindMobileNavActions();
     },
+
     bindMobileNavActions: function() {
-      $('#mobile-footer').click(function() {
+      var events = 'touchstart click';
+
+      $('#mobile-footer').bind(events, function() {
         var $el = $(this),
             shown = $el.hasClass('shown'),
             top = (shown) ? '90%' : '0';
@@ -17,8 +20,7 @@ var APP = window.APP || {};
           .toggleClass('shown', !shown);
       });
 
-      $('.nav-toggle').click(function() {
-        console.log('click');
+      $('.nav-toggle').bind(events, function() {
         var $el = $('#mobile-sidebar'),
             shown = $el.hasClass('shown'),
             left = (shown) ? '-30%' : '0',

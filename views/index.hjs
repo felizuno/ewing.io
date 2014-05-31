@@ -4,6 +4,8 @@
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="/javascripts/libs/jquery-min.1.11.1.js"></script>
+    <script src="/javascripts/libs/underscore-1.6.0.js"></script>
+    <script src="/javascripts/libs/backbone-1.1.2.js"></script>
     <script src="/javascripts/main.js"></script>
   </head>
 

@@ -8,6 +8,7 @@ var APP = window.APP || {};
       'click' : 'toggleTakeover',
       'touchstart' : 'toggleTakeover'
     },
+    
     initialize: function(config) {
       var takeoverHandler = function(model, shouldTakeOver, options) {
         if (shouldTakeOver) { this.takeOverScreen(); }
@@ -16,12 +17,15 @@ var APP = window.APP || {};
 
       this.model.on('change:footerTakeover', takeoverHandler);
     },
+    
     toggleTakeover: function() {
       this.model.set('footerTakeover', !this.model.get('footerTakeover'));
     },
+    
     takeOverScreen: function() {
       this.$el.animate({ 'top': '0'});
     },
+    
     surrenderScreen: function() {
       this.$el.animate({ 'top':  '90%'});
     }

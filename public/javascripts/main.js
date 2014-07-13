@@ -10,25 +10,21 @@ var APP = window.APP || {};
     }),
 
     init: function() {
-      this.views = {
-        nav: new this.Views.NavSidebar({
-          el: '#mobile-sidebar',
-          model: this.state
-        }),
-        mainContent: new this.Views.MainContent({
-          el: '#mobile-main-content',
-          model: this.state
-        }),
-        mainFooter: new this.Views.MainFooter({
-          el: '#mobile-footer',
-          model: this.state
-        }),
+      var Views = this.Views,
+          viewConfig = function(selector) {
+            return { el: selector, model: this.state };
+          }.bind(this);
+
+      this.activeViews = {
+        nav: new Views.NavSidebar(viewConfig('#mobile-sidebar')),
+        mainContent: new Views.MainContent(viewConfig('#mobile-main-content')),
+        mainFooter: new Views.MainFooter(viewConfig('#mobile-footer')),
       };
 
-      this.bindMobileNavActions();
+      this.bindNavAction();
     },
 
-    bindMobileNavActions: function() {
+    bindNavAction: function() {
       $('.nav-toggle').bind('click touchstart', function(e) {
         e.stopPropagation();
         this.state.set('navOpen', !this.state.get('navOpen'));

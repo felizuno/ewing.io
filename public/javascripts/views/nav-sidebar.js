@@ -14,16 +14,14 @@ var APP = window.APP || {};
     },
 
     show: function() {
-      var self = this;
-
       this.$el
         .animate({ 'left': '0'})
         .addClass('shown');
 
       $('body').one('touchstart click', function(e) {
         e.stopPropagation(); // todo: maybe not? let a link click happen?
-        self.model.set('navOpen', false);
-      });
+        this.model.set('navOpen', false);
+      }.bind(this));
     },
 
     hide: function() {

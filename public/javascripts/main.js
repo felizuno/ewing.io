@@ -1,9 +1,19 @@
 var APP = window.APP || {};
 
 (function(APP) {
+  APP = _.extend(APP, {
+    state: new Backbone.Model({
+      navOpen: false
+    }),
 
-  APP = {
     init: function() {
+      this.views = {
+        navSidebar: new this.Views.NavSidebar({
+          el: '#mobile-sidebar',
+          model: this.state
+        }),
+      };
+
       this.bindMobileNavActions();
     },
 
@@ -21,24 +31,11 @@ var APP = window.APP || {};
       });
 
       $('.nav-toggle').bind(events, function() {
-        var $el = $('#mobile-sidebar'),
-            shown = $el.hasClass('shown'),
-            left = (shown) ? '-30%' : '0',
-            $content = $('#mobile-main-content'),
-            moved = $content.hasClass('moved'),
-            left2 = (moved) ? '0' : '30%';
-
-        $el
-          .animate({ 'left': left})
-          .toggleClass('shown', !shown);
-
-        $content
-          .animate({ 'left': left2})
-          .toggleClass('moved', !moved);
+        APP.state.set('navOpen', !APP.state.get('navOpen'));
       });
     }
 
-  };
+  });
 
   $(document).ready(function() {
     APP.init();

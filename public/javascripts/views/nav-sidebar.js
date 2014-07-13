@@ -5,12 +5,10 @@ var APP = window.APP || {};
 
   APP.Views.NavSidebar = Backbone.View.extend({
     initialize: function(config) {
-      var openCloseHandler = function(model, isOpen, options) {
+      this.model.on('change:navOpen', function(model, isOpen) {
         if (isOpen) { this.show(); }
         else { this.hide(); }
-      }.bind(this);
-
-      this.model.on('change:navOpen', openCloseHandler);
+      }.bind(this));
     },
 
     show: function() {
@@ -19,7 +17,6 @@ var APP = window.APP || {};
         .addClass('shown');
 
       $('body').one('touchstart click', function(e) {
-        e.stopPropagation(); // todo: maybe not? let a link click happen?
         this.model.set('navOpen', false);
       }.bind(this));
     },

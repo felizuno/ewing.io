@@ -8,24 +8,22 @@ var APP = window.APP || {};
       'click' : 'toggleTakeover',
       'touchstart' : 'toggleTakeover'
     },
-    
+
     initialize: function(config) {
-      var takeoverHandler = function(model, shouldTakeOver, options) {
+      this.model.on('change:footerTakeover', function(model, shouldTakeOver) {
         if (shouldTakeOver) { this.takeOverScreen(); }
         else { this.surrenderScreen(); }
-      }.bind(this);
-
-      this.model.on('change:footerTakeover', takeoverHandler);
+      }.bind(this));
     },
-    
+
     toggleTakeover: function() {
       this.model.set('footerTakeover', !this.model.get('footerTakeover'));
     },
-    
+
     takeOverScreen: function() {
       this.$el.animate({ 'top': '0'});
     },
-    
+
     surrenderScreen: function() {
       this.$el.animate({ 'top':  '90%'});
     }

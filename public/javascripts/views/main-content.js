@@ -5,22 +5,23 @@ var APP = window.APP || {};
 
   APP.Views.MainContent = Backbone.View.extend({
     initialize: function(config) {
-      var navOpenCloseHandler = function(model, isOpen, options) {
+      this.model.on('change:navOpen', function(model, isOpen) {
         if (isOpen) { this.makeRoomForNav(); } 
         else { this.takeBackRoomFromNav(); }
-      }.bind(this);
+      }.bind(this));
+    },
 
-      this.model.on('change:navOpen', navOpenCloseHandler);
-    },
     makeRoomForNav: function() {
-      var anim = {};
-      anim[this.model.get('navPosition')] = '20%';
-      this.$el.animate(anim);
+      this.$el.animate(this.makeAnim({}, this.model.get('navPosition'), '20%'));
     },
+
     takeBackRoomFromNav: function() {
-      var anim = {};
-      anim[this.model.get('navPosition')] = '0';      
-      this.$el.animate(anim);
+      this.$el.animate(this.makeAnim({}, this.model.get('navPosition'), '0'));
+    }, 
+
+    makeAnim: function(obj, key, val) {
+      obj[key] = val;
+      return obj;
     }
   });
 

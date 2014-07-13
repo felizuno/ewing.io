@@ -6,9 +6,9 @@ var APP = window.APP || {};
   APP.Views.NavSidebar = Backbone.View.extend({
     initialize: function(config) {
       var openCloseHandler = function(model, isOpen, options) {
-            if (isOpen) { this.show(); }
-            else { this.hide(); }
-          }.bind(this);
+        if (isOpen) { this.show(); }
+        else { this.hide(); }
+      }.bind(this);
 
       this.model.on('change:navOpen', openCloseHandler);
     },

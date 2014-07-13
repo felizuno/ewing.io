@@ -6,9 +6,9 @@ var APP = window.APP || {};
   APP.Views.MainContent = Backbone.View.extend({
     initialize: function(config) {
       var navOpenCloseHandler = function(model, isOpen, options) {
-            if (isOpen) { this.makeRoomForNav(); } 
-            else { this.takeBackRoomFromNav(); }
-          }.bind(this);
+        if (isOpen) { this.makeRoomForNav(); } 
+        else { this.takeBackRoomFromNav(); }
+      }.bind(this);
 
       this.model.on('change:navOpen', navOpenCloseHandler);
     },

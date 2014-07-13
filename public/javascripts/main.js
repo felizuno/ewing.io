@@ -4,7 +4,9 @@ var APP = window.APP || {};
   APP = _.extend(APP, {
     state: new Backbone.Model({
       navOpen: false,
-      navPosition: 'left'
+      navPosition: 'left',
+      footerAvailable: true,
+      footerTakeover: false
     }),
 
     init: function() {
@@ -16,30 +18,21 @@ var APP = window.APP || {};
         mainContent: new this.Views.MainContent({
           el: '#mobile-main-content',
           model: this.state
-        })
+        }),
+        mainFooter: new this.Views.MainFooter({
+          el: '#mobile-footer',
+          model: this.state
+        }),
       };
 
       this.bindMobileNavActions();
     },
 
     bindMobileNavActions: function() {
-      var events = 'touchstart click',
-          state = this.state;
-
-      $('#mobile-footer').bind(events, function() {
-        var $el = $(this),
-            shown = $el.hasClass('shown'),
-            top = (shown) ? '90%' : '0';
-
-        $el
-          .animate({ 'top': top })
-          .toggleClass('shown', !shown);
-      });
-
-      $('.nav-toggle').bind(events, function(e) {
+      $('.nav-toggle').bind('click touchstart', function(e) {
         e.stopPropagation();
-        state.set('navOpen', !state.get('navOpen'));
-      });
+        this.state.set('navOpen', !this.state.get('navOpen'));
+      }.bind(this));
     }
 
   });

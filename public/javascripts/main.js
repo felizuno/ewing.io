@@ -30,7 +30,8 @@ var APP = window.APP || {};
           .toggleClass('shown', !shown);
       });
 
-      $('.nav-toggle').bind(events, function() {
+      $('.nav-toggle').bind(events, function(e) {
+        e.stopPropagation();
         APP.state.set('navOpen', !APP.state.get('navOpen'));
       });
     }

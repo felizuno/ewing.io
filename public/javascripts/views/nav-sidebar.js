@@ -18,7 +18,9 @@ var APP = window.APP || {};
     },
 
     show: function() {
-      var left = '0',
+      var self = this,
+          events = 'touchstart click',
+          left = '0',
           $content = $('#mobile-main-content'), // todo: pass in
           moved = $content.hasClass('moved'), // todo: attribute of content
           left2 = (moved) ? '0' : '20%';
@@ -31,7 +33,10 @@ var APP = window.APP || {};
         .animate({ 'left': left2})
         .toggleClass('moved', !moved);
 
-      $('body').one(events, this.hide.bind(this));
+      $('body').one(events, function(e) {
+        e.stopPropagation(); // todo: maybe not? let a link click happen?
+        self.model.set('navOpen', false);
+      });
     },
 
     hide: function() {

@@ -3,22 +3,28 @@ var APP = window.APP || {};
 (function(APP) {
   APP = _.extend(APP, {
     state: new Backbone.Model({
-      navOpen: false
+      navOpen: false,
+      navPosition: 'left'
     }),
 
     init: function() {
       this.views = {
-        navSidebar: new this.Views.NavSidebar({
+        nav: new this.Views.NavSidebar({
           el: '#mobile-sidebar',
           model: this.state
         }),
+        mainContent: new this.Views.MainContent({
+          el: '#mobile-main-content',
+          model: this.state
+        })
       };
 
       this.bindMobileNavActions();
     },
 
     bindMobileNavActions: function() {
-      var events = 'touchstart click';
+      var events = 'touchstart click',
+          state = this.state;
 
       $('#mobile-footer').bind(events, function() {
         var $el = $(this),
@@ -32,7 +38,7 @@ var APP = window.APP || {};
 
       $('.nav-toggle').bind(events, function(e) {
         e.stopPropagation();
-        APP.state.set('navOpen', !APP.state.get('navOpen'));
+        state.set('navOpen', !state.get('navOpen'));
       });
     }
 

@@ -8,6 +8,7 @@
     <script src="/javascripts/libs/backbone-1.1.2.js"></script>
     <script src="/javascripts/main.js"></script>
     <script src="/javascripts/views/nav-sidebar.js"></script>
+    <script src="/javascripts/views/main-content.js"></script>
   </head>
 
   <body>

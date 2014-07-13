@@ -3,55 +3,33 @@ var APP = window.APP || {};
 (function() {
   APP.Views = APP.Views || {};
 
-  // Kevin don't forget to use new NavSidebar()
   APP.Views.NavSidebar = Backbone.View.extend({
     initialize: function(config) {
-      var self = this;
+      var openCloseHandler = function(model, isOpen, options) {
+            if (isOpen) { this.show(); }
+            else { this.hide(); }
+          }.bind(this);
 
-      this.model.on('change:navOpen', function(model, isOpen, options) {
-        if (isOpen) {
-          self.show();
-        } else {
-          self.hide();
-        }
-      });
+      this.model.on('change:navOpen', openCloseHandler);
     },
 
     show: function() {
-      var self = this,
-          events = 'touchstart click',
-          left = '0',
-          $content = $('#mobile-main-content'), // todo: pass in
-          moved = $content.hasClass('moved'), // todo: attribute of content
-          left2 = (moved) ? '0' : '20%';
+      var self = this;
 
       this.$el
-        .animate({ 'left': left})
+        .animate({ 'left': '0'})
         .addClass('shown');
 
-      $content // todo: content.makeRoomForNav()
-        .animate({ 'left': left2})
-        .toggleClass('moved', !moved);
-
-      $('body').one(events, function(e) {
+      $('body').one('touchstart click', function(e) {
         e.stopPropagation(); // todo: maybe not? let a link click happen?
         self.model.set('navOpen', false);
       });
     },
 
     hide: function() {
-      var left = '-20%',
-          $content = $('#mobile-main-content'), // todo
-          moved = $content.hasClass('moved'), // todo
-          left2 = (moved) ? '0' : '20%';
-
       this.$el
-        .animate({ 'left': left})
+        .animate({ 'left': '-20%'})
         .removeClass('shown');
-
-      $content // content.takeUpFullScreen();
-        .animate({ 'left': left2})
-        .toggleClass('moved', !moved);
     }
   });
 

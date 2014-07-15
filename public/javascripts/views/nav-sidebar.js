@@ -38,8 +38,7 @@ var APP = window.APP || {};
     },
 
     render: function() {
-      var template = _.template(this.template, {});
-      this.$el.html(template);
+      this.$el.html(_.template(this.template, {}));
       return this;
     }
   });

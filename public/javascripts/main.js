@@ -18,7 +18,7 @@ var APP = window.APP || {};
       this.activeViews = {
         nav: new Views.NavSidebar(viewConfig('#nav-container')),
         mainContent: new Views.MainContent(viewConfig('#main-content')),
-        mainFooter: new Views.MainFooter(viewConfig('#footer')),
+        mainFooter: new Views.MainFooter(viewConfig('#mobile-footer')),
       };
 
       this.bindNavAction();

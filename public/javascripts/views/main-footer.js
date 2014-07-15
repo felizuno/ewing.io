@@ -5,8 +5,8 @@ var APP = window.APP || {};
 
   APP.Views.MainFooter = Backbone.View.extend({
     events: {
-      'click' : 'toggleTakeover',
-      'touchstart' : 'toggleTakeover'
+      'click'       : 'toggleTakeover',
+      'touchstart'  : 'toggleTakeover'
     },
 
     initialize: function(config) {

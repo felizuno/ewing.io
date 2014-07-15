@@ -29,17 +29,9 @@ var APP = window.APP || {};
   });
 
   var SidebarButtonView = Backbone.View.extend({
-    respondToContact: function() {
-
-    },
-
-    beSelected: function() {
-
-    },
-
-    beUnselected: function() {
-
-    }
+    respondToContact: function() { },
+    beSelected: function() { },
+    beUnselected: function() { }
   });
 
 })();

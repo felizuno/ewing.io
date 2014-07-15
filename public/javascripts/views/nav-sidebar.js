@@ -4,11 +4,17 @@ var APP = window.APP || {};
   APP.Views = APP.Views || {};
 
   APP.Views.NavSidebar = Backbone.View.extend({
+
     initialize: function(config) {
+      this.template = $('#mobile-sidebar-template').html();
+      this.render();
+
       this.model.on('change:navOpen', function(model, isOpen) {
         if (isOpen) { this.show(); }
         else { this.hide(); }
       }.bind(this));
+      
+      return this;
     },
 
     show: function() {
@@ -19,12 +25,22 @@ var APP = window.APP || {};
       $('body').one('touchstart click', function(e) {
         this.model.set('navOpen', false);
       }.bind(this));
+      
+      return this;
     },
 
     hide: function() {
       this.$el
         .animate({ 'left': '-20%'})
         .removeClass('shown');
+      
+      return this;
+    },
+
+    render: function() {
+      var template = _.template(this.template, {});
+      this.$el.html(template);
+      return this;
     }
   });
 

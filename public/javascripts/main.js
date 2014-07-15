@@ -16,9 +16,9 @@ var APP = window.APP || {};
           }.bind(this);
 
       this.activeViews = {
-        nav: new Views.NavSidebar(viewConfig('#mobile-sidebar')),
-        mainContent: new Views.MainContent(viewConfig('#mobile-main-content')),
-        mainFooter: new Views.MainFooter(viewConfig('#mobile-footer')),
+        nav: new Views.NavSidebar(viewConfig('#nav-container')),
+        mainContent: new Views.MainContent(viewConfig('#main-content')),
+        mainFooter: new Views.MainFooter(viewConfig('#footer')),
       };
 
       this.bindNavAction();

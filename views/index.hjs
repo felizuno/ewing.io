@@ -10,10 +10,8 @@
     <script src="/javascripts/views/nav-sidebar.js"></script>
     <script src="/javascripts/views/main-content.js"></script>
     <script src="/javascripts/views/main-footer.js"></script>
-  </head>
 
-  <body>
-    <div id="mobile-sidebar">
+    <script id="mobile-sidebar-template" type="text/template">
       <div class="nav vertical">
         <div class="nav-button">
           <div class="icon icon-home"></div>
@@ -32,9 +30,13 @@
           <div class="text">Fun</div>
         </div>
       </div>      
-    </div>
+    </script>
+  </head>
 
-    <div id="mobile-main-content" class="shown full-view">
+  <body>
+    <div id="nav-container"></div>
+
+    <div id="main-content" class="shown full-view">
       <div id="mobile-under" class="shown full-view">
       </div>
     
@@ -45,7 +47,7 @@
           </div>
           <h1>{{ title }}</h1>
         </div>
-        <div id="mobile-footer" class="">
+        <div id="footer" class="">
         </div>
       </div>
 

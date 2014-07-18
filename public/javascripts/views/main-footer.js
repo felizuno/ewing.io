@@ -21,7 +21,7 @@ var APP = window.APP || {};
     },
 
     takeOverScreen: function() {
-      this.$el.animate({ 'top': '0'});
+      this.$el.animate({ 'top': '10%'});
     },
 
     surrenderScreen: function() {

@@ -1,6 +1,7 @@
 @navBG: #2b6d99;
 @navText: #76aacc;
 @navTextActive: #adfff3;
+@transWhite: rgba(255, 255, 255, 0.2);
 
 @font-face {
   font-family: 'icomoon';
@@ -59,6 +60,7 @@ body {
   width: 20%;
   height: 100%;
   background-color: blue;
+  box-shadow: inset -10px -9px 35px -16px rgba(0,0,0,0.5);
 }
 
 #main-content {
@@ -79,7 +81,7 @@ body {
   top: 0;
   height: 10%;
   width: 100%;
-  background-color: red;
+  background-color: @transWhite;
 
   .nav-toggle {
     width: 10%;
@@ -101,7 +103,7 @@ body {
   top: 90%;
   height: 100%;
   width: 100%;
-  background-color: pink;
+  background-color: @transWhite;
 }
 
 .nav {

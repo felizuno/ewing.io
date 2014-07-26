@@ -15,19 +15,19 @@
       <div class="nav vertical">
         <div class="nav-button">
           <div class="icon icon-home"></div>
-          <div class="text">Home</div>
-        </div>
-        <div class="nav-button">
-          <div class="icon icon-headphones"></div>
-          <div class="text">Music</div>
+          <div class="text">About Kevin</div>
         </div>
         <div class="nav-button">
           <div class="icon icon-user2"></div>
-          <div class="text">Work</div>
+          <div class="text">Work Code</div>
         </div>
         <div class="nav-button">
           <div class="icon icon-mug"></div>
-          <div class="text">Fun</div>
+          <div class="text">Fun Code</div>
+        </div>
+        <div class="nav-button">
+          <div class="icon icon-headphones"></div>
+          <div class="text">Art &amp; Music</div>
         </div>
       </div>      
     </script>

@@ -3,6 +3,7 @@
   <head>
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/libs/modernizr.js"></script>
     <script src="/javascripts/libs/jquery-min.1.11.1.js"></script>
     <script src="/javascripts/libs/underscore-1.6.0.js"></script>
     <script src="/javascripts/libs/backbone-1.1.2.js"></script>
@@ -11,23 +12,52 @@
     <script src="/javascripts/views/main-content.js"></script>
     <script src="/javascripts/views/main-footer.js"></script>
 
-    <script id="mobile-sidebar-template" type="text/template">
+    <script id="mobile-sidebar-template-1" type="text/template">
+      <div class="nav vertical">
+        <a href="#About" alt="About Kevin">
+          <div class="nav-button">
+            <div class= "icon icon-home"></div>
+            <div class="text">About Kevin</div>
+          </div>
+        </a>
+        <a href="#Work" alt="Work Code">
+          <div class="nav-button">
+            <div class="icon icon-user2"></div>
+            <div class="text">Work Code</div>
+          </div>
+        </a>
+        <a href="#Fun" alt="Fun Code">
+          <div class="nav-button">
+            <div class="icon icon-lab"></div>
+            <div class="text">Fun Code</div>
+          </div>
+        </a>
+        <a href="#Art" alt="Art and Music">
+          <div class="nav-button">
+            <div class="icon icon-headphones"></div>
+            <div class="text">Art &amp; Music</div>
+          </div>
+        </a>
+      </div>      
+    </script>
+
+    <script id="mobile-sidebar-template-2" type="text/template">
       <div class="nav vertical">
         <div class="nav-button">
-          <div class="icon icon-home"></div>
-          <div class="text">About Kevin</div>
+          <div class= "icon icon-blocked"></div>
+          <div class="text">Extras</div>
         </div>
         <div class="nav-button">
-          <div class="icon icon-user2"></div>
-          <div class="text">Work Code</div>
+          <div class="icon icon-blocked"></div>
+          <div class="text">Professional</div>
         </div>
         <div class="nav-button">
-          <div class="icon icon-mug"></div>
-          <div class="text">Fun Code</div>
+          <div class="icon icon-blocked"></div>
+          <div class="text">Personal</div>
         </div>
         <div class="nav-button">
-          <div class="icon icon-headphones"></div>
-          <div class="text">Art &amp; Music</div>
+          <div class="icon icon-settings"></div>
+          <div class="text">About</div>
         </div>
       </div>      
     </script>

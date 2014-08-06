@@ -5,8 +5,10 @@ var APP = window.APP || {};
     state: new Backbone.Model({
       navOpen: false,
       navPosition: 'left',
+      navType: 'link', // link, toggle, radio
       footerAvailable: true,
-      footerTakeover: false
+      footerTakeover: false,
+      canvasHeader: Modernizr.canvas
     }),
 
     init: function() {
@@ -22,6 +24,7 @@ var APP = window.APP || {};
       };
 
       this.bindNavAction();
+      // this.state.set('footerAvailable', false);
     },
 
     bindNavAction: function() {

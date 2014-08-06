@@ -6,7 +6,7 @@ var APP = window.APP || {};
       navOpen: false,
       navPosition: 'left',
       navType: 'link', // link, toggle, radio
-      footerAvailable: true,
+      footerAvailable: false,
       footerTakeover: false,
       canvasHeader: Modernizr.canvas
     }),
@@ -20,7 +20,8 @@ var APP = window.APP || {};
       this.activeViews = {
         nav: new Views.NavSidebar(viewConfig('#nav-container')),
         mainContent: new Views.MainContent(viewConfig('#main-content')),
-        mainFooter: new Views.MainFooter(viewConfig('#mobile-footer')),
+        mainHeader: new Views.MainHeader(viewConfig('#mobile-header')),
+        mainFooter: new Views.MainFooter(viewConfig('#mobile-footer'))
       };
 
       this.bindNavAction();

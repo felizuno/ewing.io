@@ -23,6 +23,8 @@ var APP = window.APP || {};
       if (this.model.get('footerAvailable')) {
         if (this.model.get('footerTakeover')) { this.takeOverScreen(); }
         else { this.surrenderScreen(); }
+      } else {
+        this.hide();
       }
     },
 

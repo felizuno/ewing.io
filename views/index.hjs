@@ -3,7 +3,9 @@
   <head>
     <title>{{ title }}</title>
     <link href='http://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
     <link rel='stylesheet' href='/stylesheets/style.css' />
+
     <script src="/javascripts/libs/modernizr.js"></script>
     <script src="/javascripts/libs/jquery-min.1.11.1.js"></script>
     <script src="/javascripts/libs/underscore-1.6.0.js"></script>
@@ -79,6 +81,17 @@
           </div>
           <h1>{{ title }}</h1>
         </div>
+
+        <div id="idle-state-pane">
+          <div class="content-body">
+            <div class="title"><h2>Hardcoded Title</h2></div>
+            <div class="body">
+              <div class="message">On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains</div>
+            </div>
+            <div class="action-button">Button Caption</div>
+          </div>
+        </div>
+
         <div id="mobile-footer" class="">
         </div>
       </div>

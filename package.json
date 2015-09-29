@@ -20,8 +20,13 @@
   },
   "homepage": "https://github.com/felizuno/ewing.io",
   "dependencies": {
+    "bower": "^1.5.3",
     "express": "3.5.0",
     "hjs": "*",
     "less-middleware": "*"
+  },
+  "devDependencies": {
+    "glob": "^5.0.15",
+    "gulp": "^3.9.0"
   }
 }

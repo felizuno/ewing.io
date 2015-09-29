@@ -1,0 +1,27 @@
+{
+  "name": "ewing.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/felizuno/ewing.io",
+  "authors": [
+    "Kevin Ewing <notmyuwmail@gmail.com>"
+  ],
+  "description": "personal site",
+  "main": "app.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "underscore": "~1.8.3",
+    "backbone": "~1.2.3"
+  }
+}
